@@ -14,7 +14,11 @@ export class ExampleView extends ItemView {
   }
 
   getDisplayText() {
-    return "Example view";
+    return "Gallery";
+  }
+
+  getIcon() {
+    return "image-file";
   }
 
   async onOpen() {
