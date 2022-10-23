@@ -1,10 +1,10 @@
 {
-	"id": "obsidian-sample-plugin",
-	"name": "Sample Plugin",
+	"id": "obsidian-simple-gallery",
+	"name": "Simple gallery",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
+	"description": "This is a gallery plugin for Obsidian. It displays a gallery of all the images in your vault.",
+	"author": "alexwlchan",
+	"authorUrl": "https://alexwlchan.net",
 	"isDesktopOnly": false
 }
