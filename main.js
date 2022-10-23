@@ -21,7 +21,9 @@ class GalleryView extends obsidian.ItemView {
 
   async onOpen() {
     const container = this.containerEl.children[1];
+
     container.empty();
+    container.classList.add('gallery');
 
     const vaultFiles = this.app.vault.getFiles();
     const imageFiles = vaultFiles
@@ -41,7 +43,6 @@ class GalleryView extends obsidian.ItemView {
           attr: {
             src: this.app.vault.adapter.getResourcePath(image.path),
             alt: '',
-            class: 'gallery-item'
           }
         }
       );
