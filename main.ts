@@ -32,7 +32,7 @@ export class GalleryView extends ItemView {
     for (const image of imageFiles) {
       const imagePath = this.app.vault.adapter.getResourcePath(image.path)
 
-      const link = container.createEl("a", { text: image.path, attr: { href: image.path }});
+      const link = container.createEl("a", { text: image.path, attr: { href: image.path }, class: 'gallery-item'});
       container.createEl("img", { attr: { src: imagePath }, parent: link });
     }
 

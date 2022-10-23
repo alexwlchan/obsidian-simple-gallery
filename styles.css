@@ -1,5 +1,5 @@
-img {
+img.gallery-item {
   height: 200px;
   display: inline-block;
-  cursor: pointer;
+  margin: 10px;
 }
