@@ -12,7 +12,7 @@ class GalleryView extends obsidian.ItemView {
   }
 
   getDisplayText() {
-    return 'Gallery';
+    return 'Gallery view';
   }
 
   getIcon() {
