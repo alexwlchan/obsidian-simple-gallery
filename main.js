@@ -40,10 +40,7 @@ class GalleryView extends obsidian.ItemView {
     for (const image of imageFiles) {
       const imageEl = container.createEl(
         'img', {
-          attr: {
-            src: this.app.vault.adapter.getResourcePath(image.path),
-            alt: '',
-          }
+          attr: { src: this.app.vault.adapter.getResourcePath(image.path) }
         }
       );
 
