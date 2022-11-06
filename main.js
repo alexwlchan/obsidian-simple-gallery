@@ -55,24 +55,46 @@ class GalleryView extends obsidian.ItemView {
 class GalleryPlugin extends obsidian.Plugin {
   async onload() {
     this.registerView(VIEW_TYPE, (leaf) => new GalleryView(leaf));
+
+    // Toggle open/close, could we switch also?
     this.addRibbonIcon('image-file', 'Open gallery', () => {
-      this.activateView();
+      if (this.hasGalleryTab()) {
+        this.closeGallery();
+      } else {
+        this.openGallery();
+      }
     });
   }
 
   async onunload() {
+    closeGallery();
+  }
+
+  hasGalleryTab() {
+    return this.app.workspace.getLeavesOfType(VIEW_TYPE).length > 0;
+  }
+
+  getGalleryTab() {
+    return this.hasGalleryTab() ? this.app.workspace.getLeavesOfType(VIEW_TYPE)[0] : null;
+  }
+
+  switchToGalleryTab() {
+    this.app.workspace.revealLeaf(this.getGalleryTab());
+  }
+
+  async closeGallery() {
     this.app.workspace.detachLeavesOfType(VIEW_TYPE);
   }
 
-  async activateView() {
-    this.app.workspace.detachLeavesOfType(VIEW_TYPE);
-
-    await this.app.workspace.getLeaf(false).setViewState({
+  async openGallery() {
+    // Passing 'getLeaf(newLeaf: true)' means this will create a new view,
+    // rather than an existing one -- which may blat already-open tabs.
+    await this.app.workspace.getLeaf(true).setViewState({
       type: VIEW_TYPE,
       active: true
     });
 
-    this.app.workspace.revealLeaf(this.app.workspace.getLeavesOfType(VIEW_TYPE)[0]);
+    this.switchToGalleryTab();
   }
 };
 
