@@ -30,7 +30,8 @@ class GalleryView extends obsidian.ItemView {
       .filter((vaultFile) =>
         vaultFile.extension === 'png' ||
         vaultFile.extension === 'jpeg' ||
-        vaultFile.extension === 'jpg'
+        vaultFile.extension === 'jpg' ||
+        vaultFile.extension === 'webp'
       )
       .sort((a, b) =>
         // Sort so newer files appear at the top
