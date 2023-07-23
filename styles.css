@@ -3,7 +3,7 @@
 }
 
 .gallery img {
-  height: 200px;
+  max-height: 200px;
   display: inline-block;
   margin: 10px;
   background-color: white;
